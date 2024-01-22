@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loginPage</title>
+    
+</head>
+<body>
+    <h1>LOGIN Page</h1>
+    <form>
+        <label >Name:</label><br>
+        <input type="text" id="fname" ><br>
+        <label >password:</label><br>
+        <input type="password" id="password" ><br>
+
+        <input type="button" onclick="check()" value="Submit">
+    </form>
+
+    <script>
+       function check(){
+        var name = document.getElementById('fname').value;
+        var passwd = document.getElementById('password').value;
+         if (name === "admin" && passwd ==="123")
+         {
+            alert("welcome to your page"+name);
+         } else {
+            alert("Wrong Input");
+         }
+
+       }
+    </script>
+</body>
+</html>

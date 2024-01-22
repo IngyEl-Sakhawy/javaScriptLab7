@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    
+</head>
+<body>
+    <h1>LOGIN Page</h1>
+    <form>
+        <div id="toDo">
+           <h3>Empty To-Do List</h3> 
+        </div>
+
+        <label >Task:</label>
+        <input type="text" id="task" >
+
+        <input type="button" onclick="add()" value="Add">
+    </form>
+
+    <script>
+       function add(){
+        var task =document.getElementById("task").value;
+        var mainDiv=document.getElementById("toDo");
+        if (mainDiv.innerHTML.trim() === '<h3>Empty To-Do List</h3>') {
+                
+                mainDiv.innerHTML = '';
+            }
+
+            mainDiv.innerHTML += `
+                <div>
+                    
+                    <h4 id="task-${task}" style="display: inline;" >${task}</h4>
+                   
+                    <input type="button" onclick="done('${task}')" value="✔" style="color: green;">
+                    <input type="button" onclick="remove(this)" value="✘" style="color: red;">
+                    
+                    </div>
+            `;
+       }
+
+       function done(task)
+       {
+        var taskElement = document.getElementById(`task-${task}`);
+         taskElement.style.color = 'green';
+         
+        alert("Great Job! Task Completed: " + task);
+       }
+
+       function remove(element)
+       {
+        element.parentElement.remove();
+       }
+    </script>
+</body>
+</html>
